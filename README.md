@@ -58,6 +58,6 @@ Other general troubleshooting steps
 
 	docker exec -it $container_id  /bin/bash
 
-# Kill ssf_app container
+# Kill ssf_app container (** ONLY USE IF YOU ARE WORKING WITH A SINGLE CONTAINER **)
   
-        docker kill $(docker ps | grep ssf_app | awk '{print $1}')
+        docker kill $(docker ps | tail -1 | awk '{print $1}')
