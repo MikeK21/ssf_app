@@ -61,3 +61,14 @@ Other general troubleshooting steps
 # Kill ssf_app container (** ONLY USE IF YOU ARE WORKING WITH A SINGLE CONTAINER **)
   
         docker kill $(docker ps | tail -1 | awk '{print $1}')
+
+# Kubernetes deployment
+
+## Start minikube for local deployment
+
+	brew install minikube
+	minikube start
+
+## Deploy with yml deployment file
+
+	minikube kubectl -- apply -f webapp.yaml

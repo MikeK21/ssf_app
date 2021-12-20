@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ssf-app-pod
+  labels:
+    app: ssf-app
+spec:
+  containers:
+    - name: app
+      image: localhost:5000/ssf-app
+      imagePullPolicy: Never

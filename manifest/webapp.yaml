@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ssf-app
+  labels:
+    app: ssf-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ssf-app
+  template:
+    metadata:
+      labels:
+        app: ssf-app
+    spec:
+      containers:
+        - name: ssf-app
+          image: ssf_app:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5000
